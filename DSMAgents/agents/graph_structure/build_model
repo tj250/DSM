@@ -1,0 +1,19 @@
+// State Graph
+digraph {
+	graph [fontname=SimSun]
+	node [fontname=SimSun]
+	edge [fontname=SimSun]
+	__start__ [label="开始" color=black fontcolor=black fontsize=12]
+	"启发式过滤" [label="启发式过滤" color=darkgreen fontcolor=darkgreen fontsize=12 shape=rect style=rounded]
+	"参数搜索" [label="参数搜索" color=darkgreen fontcolor=darkgreen fontsize=12 shape=rect style=rounded]
+	"用户确认参数搜索结果" [label="用户确认参数
+搜索结果" color=darkgreen fontcolor=darkgreen fontsize=12 shape=rect style=rounded]
+	"模型堆叠" [label="模型堆叠" color=darkgreen fontcolor=darkgreen fontsize=12 shape=rect style=rounded]
+	__end__ [label="结束" color=black fontcolor=black fontsize=12]
+	__start__ -> "启发式过滤" [color=darkgreen]
+	"参数搜索" -> "用户确认参数搜索结果" [color=darkgreen]
+	"启发式过滤" -> "参数搜索" [color=darkgreen]
+	"模型堆叠" -> __end__ [color=darkgreen]
+	"用户确认参数搜索结果" -> "模型堆叠" [label="优化建模结果" color=blue fontcolor=blue fontsize=10 style=dashed]
+	"用户确认参数搜索结果" -> __end__ [label="用户已确认参数搜索结果" color=blue fontcolor=blue fontsize=10 style=dashed]
+}

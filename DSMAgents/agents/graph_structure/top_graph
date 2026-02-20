@@ -1,0 +1,18 @@
+// State Graph
+digraph {
+	graph [fontname=SimSun]
+	node [fontname=SimSun]
+	edge [fontname=SimSun]
+	__start__ [label="开始" color=black fontcolor=black fontsize=12]
+	"任务分析" [label="任务分析" color=darkgreen fontcolor=darkgreen fontsize=12 shape=rect style=rounded]
+	"探索性空间数据分析" [label="探索性空间数
+据分析" color=darkgreen fontcolor=darkgreen fontsize=12 shape=rect style=rounded]
+	"建模" [label="建模" color=darkgreen fontcolor=darkgreen fontsize=12 shape=rect style=rounded]
+	"制图与评估" [label="制图与评估" color=darkgreen fontcolor=darkgreen fontsize=12 shape=rect style=rounded]
+	__end__ [label="结束" color=black fontcolor=black fontsize=12]
+	__start__ -> "任务分析" [color=darkgreen]
+	"任务分析" -> "探索性空间数据分析" [color=darkgreen]
+	"制图与评估" -> __end__ [color=darkgreen]
+	"建模" -> "制图与评估" [color=darkgreen]
+	"探索性空间数据分析" -> "建模" [color=darkgreen]
+}

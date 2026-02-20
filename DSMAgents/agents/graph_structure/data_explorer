@@ -1,0 +1,49 @@
+// State Graph
+digraph {
+	graph [fontname=SimSun]
+	node [fontname=SimSun]
+	edge [fontname=SimSun]
+	__start__ [label="开始" color=black fontcolor=black fontsize=12]
+	"用户设置数据源" [label="用户设置数据
+源" color=darkgreen fontcolor=darkgreen fontsize=12 shape=rect style=rounded]
+	"变量分析" [label="变量分析" color=darkgreen fontcolor=darkgreen fontsize=12 shape=rect style=rounded]
+	"选择确认响应变量的方式" [label="选择确认响应
+变量的方式" color=darkgreen fontcolor=darkgreen fontsize=12 shape=rect style=rounded]
+	"选择确认解释变量的方式" [label="选择确认解释
+变量的方式" color=darkgreen fontcolor=darkgreen fontsize=12 shape=rect style=rounded]
+	"选择确认类别型变量的方式" [label="选择确认类别
+型变量的方式" color=darkgreen fontcolor=darkgreen fontsize=12 shape=rect style=rounded]
+	"用户指定响应变量" [label="用户指定响应
+变量" color=darkgreen fontcolor=darkgreen fontsize=12 shape=rect style=rounded]
+	"用户指定解释变量" [label="用户指定解释
+变量" color=darkgreen fontcolor=darkgreen fontsize=12 shape=rect style=rounded]
+	"用户指定类别型变量" [label="用户指定类别
+型变量" color=darkgreen fontcolor=darkgreen fontsize=12 shape=rect style=rounded]
+	"用户确认变量分析结果" [label="用户确认变量
+分析结果" color=darkgreen fontcolor=darkgreen fontsize=12 shape=rect style=rounded]
+	"探索性空间数据分析" [label="探索性空间数
+据分析" color=darkgreen fontcolor=darkgreen fontsize=12 shape=rect style=rounded]
+	__end__ [label="结束" color=black fontcolor=black fontsize=12]
+	__start__ -> "用户设置数据源" [color=darkgreen]
+	"探索性空间数据分析" -> __end__ [color=darkgreen]
+	"用户指定响应变量" -> "用户确认变量分析结果" [color=darkgreen]
+	"用户指定类别型变量" -> "用户确认变量分析结果" [color=darkgreen]
+	"用户指定解释变量" -> "用户确认变量分析结果" [color=darkgreen]
+	"用户设置数据源" -> "变量分析" [color=darkgreen]
+	"变量分析" -> "用户设置数据源" [label="需更换数据源" color=blue fontcolor=blue fontsize=10 style=dashed]
+	"变量分析" -> "选择确认响应变量的方式" [label="需指定响应变量" color=blue fontcolor=blue fontsize=10 style=dashed]
+	"变量分析" -> "选择确认解释变量的方式" [label="需更正解释变量" color=blue fontcolor=blue fontsize=10 style=dashed]
+	"变量分析" -> "选择确认类别型变量的方式" [label="需更正类别型变量" color=blue fontcolor=blue fontsize=10 style=dashed]
+	"变量分析" -> "用户确认变量分析结果" [label="确认变量分析结果" color=blue fontcolor=blue fontsize=10 style=dashed]
+	"选择确认响应变量的方式" -> "用户设置数据源" [label="更换数据源" color=blue fontcolor=blue fontsize=10 style=dashed]
+	"选择确认响应变量的方式" -> "用户指定响应变量" [label="直接指定" color=blue fontcolor=blue fontsize=10 style=dashed]
+	"选择确认解释变量的方式" -> "用户设置数据源" [label="更换数据源" color=blue fontcolor=blue fontsize=10 style=dashed]
+	"选择确认解释变量的方式" -> "用户指定解释变量" [label="直接指定" color=blue fontcolor=blue fontsize=10 style=dashed]
+	"选择确认类别型变量的方式" -> "用户设置数据源" [label="更换数据源" color=blue fontcolor=blue fontsize=10 style=dashed]
+	"选择确认类别型变量的方式" -> "用户指定类别型变量" [label="直接指定" color=blue fontcolor=blue fontsize=10 style=dashed]
+	"用户确认变量分析结果" -> "用户设置数据源" [label="更换数据源" color=blue fontcolor=blue fontsize=10 style=dashed]
+	"用户确认变量分析结果" -> "用户指定响应变量" [label="直接指定响应变量" color=blue fontcolor=blue fontsize=10 style=dashed]
+	"用户确认变量分析结果" -> "用户指定解释变量" [label="直接指定解释变量" color=blue fontcolor=blue fontsize=10 style=dashed]
+	"用户确认变量分析结果" -> "用户指定类别型变量" [label="直接指定类别型变量" color=blue fontcolor=blue fontsize=10 style=dashed]
+	"用户确认变量分析结果" -> "探索性空间数据分析" [label="确认分析结果" color=blue fontcolor=blue fontsize=10 style=dashed]
+}
