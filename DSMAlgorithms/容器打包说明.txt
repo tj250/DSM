@@ -1,0 +1,57 @@
+将本地工程打包为库的命令--用于调试，临时生成
+pip install -e .
+
+# 通过cmd进入工程目录
+cd D:\PycharmProjects\DSMAlgorithms
+
+# 创建隔离虚拟环境
+python -m venv venv
+.\venv\Scripts\activate  # 激活虚拟环境
+
+# 安装生产依赖(如果迁移到新的环境需要)
+pip install ./wheel/scipy-1.15.3-cp312-cp312-win_amd64.whl
+pip install ./wheel/xgboost-3.0.2-py3-none-win_amd64.whl
+pip install ./wheel/fonttools-4.59.0-cp312-cp312-win_amd64.whl
+pip install ./wheel/matplotlib-3.10.3-cp312-cp312-win_amd64.whl
+pip install ./wheel/statsmodels-0.14.5-cp312-cp312-win_amd64.whl
+pip install ./wheel/psycopg2_binary-2.9.10-cp312-cp312-win_amd64.whl
+# gdal需要通过conda安装，pip安装不成功
+conda install -c conda-forge gdal
+pip install -r requirements.txt
+
+# 生成精确依赖列表
+pip freeze > requirements.txt    # Dockerfile里需要此文件
+
+# 编写Dockerfile
+......
+
+# 编写忽略打包的目录和文件列表，.dockerignore 配置
+......
+
+# 构建镜像(在venv虚拟环境下)
+docker build -t dsm_api:0.1 .
+
+# 启动镜像,也可以在docker desktop中启动执行
+docker-compose up -d
+-----------------结束-------------------
+
+--------------其它命令------------------
+# 删除镜像
+docker rmi dsm_api:0.1
+# 查看日志
+docker logs -f dsm_api:0.1
+
+# 查看本机已有镜像
+docker image ls
+
+# 查看docker镜像的详细信息
+docker image inspect image dsm_api:0.1
+
+
+# 每一次更新镜像的命令:确保docker desktop启动,然后进入cmd.exe命令行后执行：
+d:                                      # 切换到D盘
+cd D:\PycharmProjects\DSMAlgorithms     # 进入工程目录
+.\venv\Scripts\activate                 # 激活虚拟环境
+docker rmi dsm_api:0.1                  # 移除旧的镜像
+docker build -t dsm_api:0.1 .           # 构建新的镜像
+docker-compose up -d                    # 启动镜像实例，也可以进入docker desktop通过图形化界面启动

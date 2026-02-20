@@ -1,0 +1,5 @@
+进入D:\pycharmprojects\dsmalgorithms目录，然后执行如下命令，在dist目录下生成.whl文件:
+python setup.py sdist bdist_wheel
+
+在另外工程中，通过pip install 来安装该whl文件:
+pip install d:\PycharmProjects\DSMAlgorithms\dist\dsmalgorithms-0.1-py3-none-any.whl --force-reinstall

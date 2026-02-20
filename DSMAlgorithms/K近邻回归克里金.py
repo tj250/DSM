@@ -1,0 +1,2 @@
+from DSMAlgorithms.sklearn_wrap.regression_kriging import RegressionKrigingRegressor
+rk = RegressionKrigingRegressor()

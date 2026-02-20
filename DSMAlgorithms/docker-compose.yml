@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  dsm1:
+    image: dsm_api:0.1
+    ports:
+      - "8301:8389"  # 宿主机端口:容器端口
+    volumes:
+      - E:\\data\\DSM_Test:/data
+    environment:
+      - TZ=Asia/Shanghai
+  dsm2:
+    image: dsm_api:0.1
+    ports:
+      - "8302:8389"  # 宿主机端口:容器端口
+    volumes:
+      - E:\\data\\DSM_Test:/data
+    environment:
+      - TZ=Asia/Shanghai
+  dsm3:
+    image: dsm_api:0.1
+    ports:
+      - "8303:8389"  # 宿主机端口:容器端口
+    volumes:
+      - E:\\data\\DSM_Test:/data
+    environment:
+      - TZ=Asia/Shanghai
+

@@ -1,0 +1,58 @@
+affine==2.4.0
+attrs==25.3.0
+beautifulsoup4==4.13.4
+certifi==2025.7.14
+charset-normalizer==3.4.2
+click==8.2.1
+click-plugins==1.1.1.2
+cligj==0.7.2
+colorama==0.4.6
+contourpy==1.3.2
+cupy==13.5.1
+cycler==0.12.1
+deprecation==2.1.0
+esda==2.7.1
+fastrlock==0.8.3
+fonttools @ file:///D:/PycharmProjects/DSMAlgorithms/wheel/fonttools-4.59.0-cp312-cp312-win_amd64.whl#sha256=332bfe685d1ac58ca8d62b8d6c71c2e52a6c64bc218dc8f7825c9ea51385aa01
+geopandas==1.0.1
+hypothesis==6.131.33
+idna==3.10
+iniconfig==2.1.0
+joblib==1.4.2
+kiwisolver==1.4.8
+libpysal==4.13.0
+matplotlib @ file:///D:/PycharmProjects/DSMAlgorithms/wheel/matplotlib-3.10.3-cp312-cp312-win_amd64.whl#sha256=cf37d8c6ef1a48829443e8ba5227b44236d7fcaf7647caa3178a4ff9f7a5be05
+mgwr==2.2.1
+numpy==1.26.4
+packaging==24.2
+pandas==2.2.3
+patsy==1.0.1
+pillow==11.1.0
+platformdirs==4.3.8
+pluggy==1.6.0
+psycopg2-binary==2.9.10
+PyKrige==1.7.2
+pyogrio==0.11.0
+pyparsing==3.2.3
+pyproj==3.7.1
+pytest==8.3.5
+python-dateutil==2.9.0.post0
+pytz==2025.2
+rasterio==1.4.3
+requests==2.32.4
+scikit-learn==1.7.1
+scipy @ file:///D:/PycharmProjects/DSMAlgorithms/wheel/scipy-1.15.3-cp312-cp312-win_amd64.whl#sha256=52092bc0472cfd17df49ff17e70624345efece4e1a12b23783a1ac59a1b728ed
+seaborn==0.13.2
+shapely==2.1.1
+six==1.17.0
+sortedcontainers==2.4.0
+soupsieve==2.7
+spglm==1.1.0
+spreg==1.8.3
+statsmodels @ file:///D:/PycharmProjects/DSMAlgorithms/wheel/statsmodels-0.14.5-cp312-cp312-win_amd64.whl#sha256=b2ed065bfbaf8bb214c7201656df840457c2c8c65e1689e3eb09dc7440f9c61c
+threadpoolctl==3.6.0
+tqdm==4.67.1
+typing_extensions==4.14.1
+tzdata==2025.2
+urllib3==2.5.0
+xgboost @ file:///D:/PycharmProjects/DSMAlgorithms/wheel/xgboost-3.0.2-py3-none-win_amd64.whl#sha256=b4c89b71d134da9fa6318e3c9f5459317d1013b4d57059d10ed2840750e2f7e1
