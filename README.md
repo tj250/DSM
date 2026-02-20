@@ -1,2 +1,3 @@
 # DSM
-数字土壤制图
+此为数字土壤制图原型系统的源代码，其中DSMAgents是多智能体终端子系统的源代码工程，DSMAlgorithms是算法子系统的源代码工程，DSMTools是MCP工具集的源代码工程。
+
