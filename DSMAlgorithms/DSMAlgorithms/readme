@@ -1,0 +1,9 @@
+传递给模型的数据的考量：
+1、单一模型建模：
+    在建模阶段，由于RandomizedSearchCV的存在，在其fit方法内部，会执行交叉验证，因此传入fit方法的X必须是经过处理（z-score/normalize，类别编码，去除必要的坐标列等）后的数据
+            贝叶斯回归相对好控制，但为了和RandomizedSearchCV保持一致，也采用了将经过处理后的数据传递给fit和predict方法
+    在预测制图阶段，必须传递不经过特别处理的原始数据，通过采用模型包装器（继承自DSMBaseModel，如RandomForestRegressionModel），包装器重载了predict方法，在predict方法中进行数据处理（z-score/normalize，类别编码，去除必要的坐标列等）
+2、堆叠建模（采用sklearn的StackingRegressor）：
+    在建模阶段，每个基模型都是自定义的，以便于重载原始回归方法的fit和predict方法，命名大部分都是...StackingWrapper（除了RK和CK，这两个实现了sklearn的BaseEstimator, RegressorMixin类，可以作为StackingRegressor的基学习器）
+            由于组合的多个模型对数据的要求各不相同，因此，传递给fit和predict的方法不应对数据进行任何处理，应该为原始数据，由模型内部自行根据自身特性进行不要的处理
+    在预测制图阶段，必须使用StackingModel，必须传递不经过特别处理的原始数据，该类也继承子DSMBaseModel,重载了predict方法,该方法会将数据路由至...StackingWrapper的predict方法中做实质性的处理
